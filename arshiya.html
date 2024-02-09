@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: #333;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: #e44d26;
+            margin-bottom: 5px;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        main {
+            text-align: center;
+        }
+
+        section {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            margin: auto;
+            position: relative;
+        }
+
+        img {
+            border-radius: 50%;
+            margin-bottom: 20px;
+            width: 100%; /* Adjusted width to 100% */
+            max-width: 150px; /* Adjusted max-width */
+            height: auto; /* Added auto height */
+        }
+
+        button {
+            background-color: #e44d26;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            z-index: 1; /* Ensures the button is above the content */
+        }
+
+        button:hover {
+            background-color: #333;
+        }
+
+        footer {
+            margin-top: 20px;
+            color: #888;
+        }
+    </style>
+    <title>Shortcake - A Sweet Message</title>
+</head>
+
+<body>
+    <header>
+        <h1>For My Shortcake</h1>
+        <p>A Sweet Message to My Love</p>
+    </header>
+
+    <main>
+        <section id="love-message">
+            <!-- Replace 'arshiya.jpeg' with the actual filename -->
+            <img src="C:\Users\EH947AX\Downloads\arshiya\babe.jpeg">
+            <h2>Dear Arshiya,</h2>
+            <p id="dynamic-message"></p><br><br>
+            <button onclick="generateLoveMessage()">Generate Love Message</button>
+        </section>
+    </main>
+
+    <button id="surprise-button" onclick="toggleSurprise()">Surprise</button>
+
+    <footer>
+        <p>Created with ❤️by your Rocky Randhawa</p>
+    </footer>
+
+    <script>
+        const loveMessages = [
+            "You make my heart skip a beat.",
+            "Every moment with you is special.",
+            "I am grateful to have you in my life.",
+            "You're the sunshine in my day.",
+            "Your smile brightens up my world.",
+            "I love you more than words can express."
+        ];
+
+        function generateLoveMessage() {
+            const randomIndex = Math.floor(Math.random() * loveMessages.length);
+            document.getElementById('dynamic-message').innerHTML = `Dear Arshiya, ${loveMessages[randomIndex]}`;
+        }
+
+        function toggleSurprise() {
+            const surpriseButton = document.getElementById('surprise-button');
+            const dynamicMessage = document.getElementById('dynamic-message');
+            
+            if (surpriseButton.innerHTML === "Surprise") {
+                surpriseButton.innerHTML = "No surprise, shortcake, remember we are casual.";
+                dynamicMessage.style.color = "#333"; // Change color to default
+            } else {
+                surpriseButton.innerHTML = "Surprise";
+                dynamicMessage.style.color = "#e44d26"; // Change color to accent color
+            }
+        }
+    </script>
+</body>
+
+</html>
